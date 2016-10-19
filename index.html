@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Task 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/task/css/style.css">
+
+        <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        
+        
+        <script src="/task/js/class/weather.js"></script>
+        <script src="/task/js/main.js"></script>
+        <script src="/task/js/controllers/indexController.js"></script>
+        <script src="/task/js/services/weatherService.js"></script>
+        <script src="/task/js/directives/weather-box.js"></script>
+        
+    </head>
+    <body ng-app="task1" ng-controller="indexController">
+        <!-- Begin page content -->
+        <div class="container">
+
+            <div class="page-header">
+                <h1>Weather App</h1> 
+            </div>
+            <p class="lead">App build with AngularJS and OpenWeatherMap (<a href="https://openweathermap.org/">https://openweathermap.org/</a>)</p>
+
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div ng-if="show">
+                        <weather-box weather="weather"></weather-box>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

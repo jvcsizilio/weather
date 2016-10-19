@@ -1,0 +1,103 @@
+<div class="plan">
+	<div ng-show="showWeather">
+	    <div class="plan-name">
+	        <h2>{{weather.city}}</h2>
+	        <h2 ng-show="weather.country != 'none' ">({{weather.country}})</h2>
+	        <!-- <span>$10</span> -->
+	    </div>
+	    <ul>
+	        <li class="plan-feature">
+	        	<div class="row">
+		        	<div class="col-md-5">
+		        		<img ng-src="{{weather.icon}}" alt="Weather" class="pull-right" width="60">
+		        	</div>
+		        	<div class="col-md-6 text-left">
+		        		<h3>{{weather.temp}} °C</h3>
+		        	</div>		    
+	        	</div>	
+		    </li>
+	        <li class="plan-feature"><b>Humidity:</b> {{weather.humidity}} % </li>
+	        <li class="plan-feature"><b>Wind speed:</b> {{weather.windSpeed}} km/h </li>
+	        <li class="plan-feature"><b>Latitude:</b> {{weather.lat}}</li>
+	        <li class="plan-feature"><b>Longitude:</b> {{weather.lon}}</li>
+	        
+	        <li class="plan-feature">
+	        	<a ng-click="clear()" class="btn btn-primary btn-lg btn-block">Clear</a>
+	        </li>
+	    </ul>
+	</div> 
+	<div ng-show="!showWeather">
+		<div ng-show="!searchType">
+			<div class="plan-name">
+		        <h2>Search Weather</h2>
+		    </div>
+			<ul>
+		        <li class="plan-feature">
+		        	<a ng-click="setSearchType('country')" class="btn btn-primary btn-lg btn-block">By City/Country</a>
+		        </li>
+		        <li class="plan-feature">
+		        	<a ng-click="setSearchType('zip')" class="btn btn-primary btn-lg btn-block">By ZipCode</a>
+		        </li>
+		        <li class="plan-feature">
+		        	<a ng-click="setSearchType('coordinates')" class="btn btn-primary btn-lg btn-block">By Coodinates</a>
+		        </li>
+		    </ul>			
+		</div>
+
+		<div class="plan-name" ng-show="searchType">
+	        <h2>{{searchType}}</h2>
+	    </div>
+
+	    <div class="row">
+			<div class="form-group col-md-10 col-md-offset-1" ng-show="searchType == 'country'">
+			    <label for="city_id">City:</label>
+			    <input ng-model="weather.city" type="text" class="form-control" id="city_id" placeholder="City name">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="form-group col-md-10 col-md-offset-1" ng-show="searchType == 'zip'">
+			    <label for="zip_id">Zip Code:</label>
+			    <input ng-model="weather.zip" type="number" class="form-control" id="zip_id" placeholder="Zip Code">
+			</div>
+		</div>	
+
+		<div class="row">
+			<div class="form-group col-md-10 col-md-offset-1" ng-show="searchType == 'country' || searchType == 'zip'">
+			    <label for="country_id">Country:</label>
+			    <input ng-model="weather.country" type="text" maxlength="2" class="form-control" id="country_id" placeholder="Country code (US, BR, ...)">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="form-group col-md-10 col-md-offset-1" ng-show="searchType == 'coordinates'">
+			    <label for="lat_id">Latitude:</label>
+			    <input ng-model="weather.lat" type="text" class="form-control" id="lat_id" placeholder="Latitude">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-10 col-md-offset-1" ng-show="searchType == 'coordinates'">
+			    <label for="lon_id">Longitude:</label>
+			    <input ng-model="weather.lon" type="text" class="form-control" id="lon_id" placeholder="Longitude">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<button ng-show="searchType" ng-click="setSearchType('')" class="btn btn-primary btn-lg btn-block">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="col-md-9">
+						<button ng-show="searchType" ng-click="search()" class="btn btn-primary btn-lg btn-block">Get Weather!</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row"><br></div>
+
+	</div>   
+</div>

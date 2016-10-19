@@ -1,0 +1,40 @@
+.card {
+    position: relative;
+    display: block;
+    margin-bottom: .75rem;
+    background-color: #fff;
+    border-radius: .25rem;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.plan {
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f3f3f3;
+    -moz-box-shadow: 0 0 6px 2px #b0b2ab;
+    -webkit-box-shadow: 0 0 6px 2px #b0b2ab;
+    box-shadow: 0 0 6px 2px #b0b2ab;
+}    
+
+.plan .plan-name {
+    padding: 20px;
+    color: #fff;
+    background-color: #5e5f59;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+ul li.plan-feature {
+    padding: 15px 10px;
+    border-top: 1px solid #c5c8c0;
+}
+
+.plan ul {
+    list-style: none;
+    margin: 0;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    padding: 0;
+}
